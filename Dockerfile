@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci --only=production
+RUN npm install
 
 # Copy source code
 COPY . .
@@ -20,4 +20,4 @@ RUN npm run build
 EXPOSE $PORT
 
 # Start the application
-CMD ["npm", "run", "preview"]
+CMD ["npm", "run", "start"]
